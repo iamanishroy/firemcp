@@ -313,7 +313,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with the [Model Context Protocol SDK](https://github.com/modelcontextprotocol/sdk)
+- Built with the [Model Context Protocol SDK](https://modelcontextprotocol.io/)
 - Powered by [Firebase](https://firebase.google.com/)
 - Runtime by [Bun](https://bun.sh)
 
