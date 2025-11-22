@@ -1,9 +1,25 @@
 {
   "name": "firemcp",
   "version": "0.1.0",
+  "description": "A Model Context Protocol (MCP) server for Firestore, enabling AI agents to interact with Firestore databases through multiple transport protocols (stdio, HTTP, SSE)",
   "module": "index.ts",
   "type": "module",
-  "private": true,
+  "private": false,
+  "author": "Anish Roy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamanishroy/firemcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "firestore",
+    "firebase",
+    "ai",
+    "llm",
+    "agent"
+  ],
   "scripts": {
     "start": "bun run index.ts",
     "dev": "bun run index.ts",

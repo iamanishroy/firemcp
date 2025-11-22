@@ -1,3 +1,12 @@
+/**
+ * FireMCP - Firestore Model Context Protocol Server
+ * 
+ * This server provides MCP tools for interacting with Firestore databases.
+ * It supports multiple transport protocols: stdio, HTTP Streamable, and SSE.
+ * 
+ * @see https://modelcontextprotocol.io
+ */
+
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -6,11 +15,19 @@ import server from "./src/server.js";
 
 const PORT = parseInt(process.env.PORT || '3003');
 
+/**
+ * Start the MCP server with stdio transport.
+ * This is the default transport used by MCP clients like Claude Desktop.
+ */
 async function startStdioServer() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
 
+/**
+ * Start the MCP server with HTTP Streamable transport.
+ * Handles POST requests to /mcp endpoint for bidirectional streaming.
+ */
 async function startHttpStreamableServer() {
   const httpServer = createServer(async (req, res) => {
     const url = new URL(req.url || "", `http://${req.headers.host}`);
@@ -52,6 +69,10 @@ async function startHttpStreamableServer() {
   });
 }
 
+/**
+ * Start the MCP server with Server-Sent Events (SSE) transport.
+ * Provides /sse endpoint for event stream and /messages for client messages.
+ */
 async function startSSEServer() {
   const sseTransports: Record<string, SSEServerTransport> = {};
 
@@ -100,6 +121,14 @@ async function startSSEServer() {
   });
 }
 
+/**
+ * Main entry point - selects and starts the appropriate transport based on environment.
+ * 
+ * Transport selection:
+ * - stdio: When MCP_TRANSPORT=stdio or running in non-TTY environment
+ * - sse: When MCP_TRANSPORT=sse
+ * - http: Default when MCP_TRANSPORT=http or not specified
+ */
 async function main() {
   const mode = process.env.MCP_TRANSPORT;
 
