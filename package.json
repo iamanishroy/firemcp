@@ -1,0 +1,28 @@
+{
+  "name": "firemcp",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun run index.ts",
+    "http": "MCP_TRANSPORT=http bun run index.ts",
+    "sse": "MCP_TRANSPORT=sse bun run index.ts",
+    "stdio": "MCP_TRANSPORT=stdio bun run index.ts",
+    "inspect": "npx @modelcontextprotocol/inspector",
+    "kill": "lsof -t -i:3003 | xargs kill -9 || true"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "firebase": "^12.6.0",
+    "openai": "^6.9.1",
+    "zod": "^3.25.76"
+  }
+}
