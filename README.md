@@ -163,7 +163,18 @@ Query a Firestore collection with filters and limits.
 ```json
 {
   "collection": "users",
-  "filters": [["age", ">", 18], ["active", "==", true]],
+  "filters": [
+    {
+      "field": "age",
+      "operator": ">",
+      "value": 18
+    },
+    {
+      "field": "active",
+      "operator": "==",
+      "value": true
+    }
+  ],
   "limit": 10
 }
 ```
