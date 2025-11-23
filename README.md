@@ -209,26 +209,6 @@ For debugging and testing:
 bun run inspect
 ```
 
-## 🏗️ Project Structure
-
-```
-firemcp/
-├── src/
-│   ├── firestore.ts          # Firestore initialization and authentication
-│   ├── server.ts              # MCP server setup and tool registration
-│   └── tools/                 # Individual tool implementations
-│       ├── getDocument.ts
-│       ├── setDocument.ts
-│       ├── addDocument.ts
-│       ├── deleteDocument.ts
-│       └── queryCollection.ts
-├── index.ts                   # Entry point with transport selection
-├── package.json
-├── tsconfig.json
-├── .env.example
-└── README.md
-```
-
 ## 🛠️ Development
 
 ### Scripts
@@ -296,16 +276,6 @@ service cloud.firestore {
   }
 }
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📝 License
 
