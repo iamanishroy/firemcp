@@ -301,7 +301,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Support
 
 If you have any questions or run into issues, please [open an issue](https://github.com/iamanishroy/firemcp/issues) on GitHub.
-
----
-
-**Made with ❤️ for the AI community**
