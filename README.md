@@ -11,7 +11,6 @@ A **Model Context Protocol (MCP)** server for **Firestore**, enabling AI agents 
 - **Complete CRUD Operations**: Get, set, add, delete, and query Firestore documents
 - **Type-Safe**: Built with TypeScript and Zod schemas
 - **MCP Compatible**: Works with any MCP-compatible client (Claude Desktop, etc.)
-- **Fast Runtime**: Powered by Bun for optimal performance
 
 ## 🔒 Security Philosophy
 
